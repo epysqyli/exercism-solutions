@@ -1,0 +1,4 @@
+inner circle -> up to 1
+middle circle -> up to 5
+outer circle -> up to 10
+outside -> from 10

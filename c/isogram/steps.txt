@@ -1,0 +1,3 @@
+Add lowercase characters to the array
+Each char goes into the array index which equals its ASCII code - 97
+If a char tries to place itself where a char is already present, return false
