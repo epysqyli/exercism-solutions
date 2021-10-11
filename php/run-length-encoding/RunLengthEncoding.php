@@ -26,7 +26,9 @@ function encode(string $input): string
                 $seq[] = new Letter($input[$i]);
             }
         } else {
-            if ($input[$i - 1] != $input[$i]) {
+            if ($i == $l && $input[$i - 1] != $input[$i]) {
+                $seq[] = new Letter($input[$i]);
+            } else {
                 $seq[] = new Letter($input[$i]);
             }
         }
