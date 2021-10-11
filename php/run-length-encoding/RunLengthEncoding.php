@@ -2,35 +2,32 @@
 
 declare(strict_types=1);
 
+class Letter
+{
+    public string $char;
+    public int $count;
+
+    public function __construct(string $char, int $count = 1)
+    {
+        $this->char = $char;
+        $this->count = $count;
+    }
+}
+
 function encode(string $input): string
 {
-    // Data structure: array of Letter instances with char and count?
-    class Letter
-    {
-        public string $char;
-        public int $count;
-
-        public function __construct(string $char, int $count = 1)
-        {
-            $this->char = $char;
-            $this->count = $count;
-        }
-    }
-
-    $str = 'AAABDDDCCCEEA';
-    $l = strlen($str) - 1;
+    $l = strlen($input) - 1;
     $seq = [];
 
     // How many different subsequent letters are there?
     for ($i = 0; $i <= $l; $i++) {
         if ($i < $l) {
-            if ($str[$i] != $str[$i + 1]) {
-                $uniqueSeq[] = $str[$i];
-                $seq[] = new Letter($str[$i]);
+            if ($input[$i] != $input[$i + 1]) {
+                $seq[] = new Letter($input[$i]);
             }
         } else {
-            if ($str[$i - 1] != $str[$i]) {
-                $seq[] = new Letter($str[$i]);
+            if ($input[$i - 1] != $input[$i]) {
+                $seq[] = new Letter($input[$i]);
             }
         }
     }
@@ -40,17 +37,27 @@ function encode(string $input): string
     $y = 0;
 
     while ($y < count($seq) & $i < $l - 1) {
-        while ($str[$i] == $str[$i + 1]) {
+        while ($input[$i] == $input[$i + 1]) {
             $seq[$y]->count++;
             $i++;
         }
-        if ($str[$i] != $str[$i + 1]) {
+        if ($input[$i] != $input[$i + 1]) {
             $i++;
         }
         $y++;
     }
 
-    return 'string';
+    // Build encoded string
+    $res = '';
+    foreach ($seq as $item) {
+        if ($item->count > 1) {
+            $res .= $item->count . $item->char;
+        } else {
+            $res .= $item->char;
+        }
+    }
+
+    return $res;
 }
 
 function decode(string $input): string
