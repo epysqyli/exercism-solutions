@@ -42,7 +42,7 @@ function encode(string $input): string
         while ($i < $l - 1 && $input[$i] == $input[$i + 1]) {
             $seq[$y]->count++;
             $i++;
-            if ($i + 1 == $l) {
+            if ($i + 1 == $l && $input[$i] == $input[$i + 1] ) {
                 $seq[$y]->count++;
             }
         }
