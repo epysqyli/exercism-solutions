@@ -20,10 +20,9 @@ function encode(string $input): string
     $str = 'AAABDDDCCCEEA';
     $l = strlen($str) - 1;
     $uniqueSeq = [];
-    $i = 0;
 
     // How many different subsequent letters are there?
-    while ($i <= $l) {
+    for ($i = 0; $i <= $l; $i++) {
         if ($i < $l) {
             if ($str[$i] != $str[$i + 1]) {
                 $uniqueSeq[] = $str[$i];
@@ -33,8 +32,28 @@ function encode(string $input): string
                 $uniqueSeq[] = $str[$i];
             }
         }
+    }
 
-        $i++;
+    // Build seq array with Letter instances
+    $seq = [];
+
+    foreach ($uniqueSeq as $item) {
+        $seq[] = new Letter($item);
+    }
+
+    // Add correct count attribute to each instance
+    $i = 0;
+    $y = 0;
+
+    while ($y < count($seq) & $i < $l - 1) {
+        while ($str[$i] == $str[$i + 1]) {
+            $seq[$y]->count++;
+            $i++;
+        }
+        if ($str[$i] != $str[$i + 1]) {
+            $i++;
+        }
+        $y++;
     }
 
     return 'string';
