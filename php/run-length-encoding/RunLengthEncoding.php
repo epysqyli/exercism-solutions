@@ -39,9 +39,12 @@ function encode(string $input): string
     $y = 0;
 
     while ($y < count($seq) & $i < $l - 1) {
-        while ($input[$i] == $input[$i + 1]) {
+        while ($i < $l - 1 && $input[$i] == $input[$i + 1]) {
             $seq[$y]->count++;
             $i++;
+            if ($i + 1 == $l) {
+                $seq[$y]->count++;
+            }
         }
         if ($input[$i] != $input[$i + 1]) {
             $i++;
