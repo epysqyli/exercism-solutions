@@ -42,7 +42,7 @@ function encode(string $input): string
         while ($i < $l - 1 && $input[$i] == $input[$i + 1]) {
             $seq[$y]->count++;
             $i++;
-            if ($i + 1 == $l && $input[$i] == $input[$i + 1] ) {
+            if ($i + 1 == $l && $input[$i] == $input[$i + 1]) {
                 $seq[$y]->count++;
             }
         }
@@ -67,5 +67,32 @@ function encode(string $input): string
 
 function decode(string $input): string
 {
-    throw new \BadFunctionCallException("Implement the decode function");
+    preg_match_all("/[0-9]+[A-Za-z\s]|[A-Za-z\s]/", $input, $matches);
+
+    // Build array of Letter instances
+    $seq = [];
+
+    foreach ($matches[0] as $match) {
+        preg_match("/[A-Za-z\s]/", $match, $char);
+        preg_match("/[0-9]+/", $match, $count);
+
+        if (empty($count)) {
+            $seq[] = new Letter($char[0]);
+        } else {
+            $seq[] = new Letter($char[0], (int)$count[0]);
+        }
+    }
+
+    // Build return string
+    $output = '';
+
+    foreach ($seq as $item) {
+        if ($item->count == 1) {
+            $output .= $item->char;
+        } else {
+            $output .= str_repeat($item->char, $item->count);
+        }
+    }
+
+    return $output;
 }
