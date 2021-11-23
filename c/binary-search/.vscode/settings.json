@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "*.erb": "erb",
+    "binary_search.h": "c"
+  }
+}
