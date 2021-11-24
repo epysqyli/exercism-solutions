@@ -68,7 +68,7 @@ static void test_identifies_that_a_value_is_not_included_in_the_array(void)
 static void
 test_a_value_smaller_than_the_arrays_smallest_value_is_not_found(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int arr[] = { 1, 3, 4, 6, 8, 9, 11 };
    size_t length = sizeof(arr) / sizeof(arr[0]);
    TEST_ASSERT(NULL == binary_search(0, arr, length));
@@ -76,7 +76,7 @@ test_a_value_smaller_than_the_arrays_smallest_value_is_not_found(void)
 
 static void test_a_value_larger_than_the_arrays_largest_value_is_not_found(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int arr[] = { 1, 3, 4, 6, 8, 9, 11 };
    size_t length = sizeof(arr) / sizeof(arr[0]);
    TEST_ASSERT(NULL == binary_search(13, arr, length));
@@ -84,7 +84,7 @@ static void test_a_value_larger_than_the_arrays_largest_value_is_not_found(void)
 
 static void test_nothing_is_found_in_an_empty_array(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int arr[] = { 1 };
    size_t length = 0;
    TEST_ASSERT(NULL == binary_search(1, arr, length));
@@ -92,7 +92,7 @@ static void test_nothing_is_found_in_an_empty_array(void)
 
 static void test_nothing_is_found_when_the_left_and_right_bounds_cross(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int arr[] = { 1, 2 };
    size_t length = sizeof(arr) / sizeof(arr[0]);
    TEST_ASSERT(NULL == binary_search(0, arr, length));

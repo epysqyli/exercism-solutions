@@ -13,7 +13,7 @@ bool in_array(int value, const int *arr, size_t length)
   return res;
 }
 
-int *global_address = NULL;
+int *address = NULL;
 
 int *binary_search(int value, const int *arr, size_t length)
 {
@@ -24,12 +24,12 @@ int *binary_search(int value, const int *arr, size_t length)
 
   if (value == arr[half])
   {
-    global_address = (int *)&arr[half];
+    address = (int *)&arr[half];
   }
 
   if (value == arr[0] && length == 1)
   {
-    global_address = (int *)&arr[0];
+    address = (int *)&arr[0];
   }
 
   if (value < arr[half])
@@ -54,5 +54,5 @@ int *binary_search(int value, const int *arr, size_t length)
     binary_search(value, *right, half);
   }
 
-  return global_address;
+  return address;
 }
