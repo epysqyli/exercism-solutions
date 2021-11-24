@@ -27,11 +27,6 @@ int *binary_search(int value, const int *arr, size_t length)
     address = (int *)&arr[half];
   }
 
-  if (value == arr[0] && length == 1)
-  {
-    address = (int *)&arr[0];
-  }
-
   if (value < arr[half])
   {
     const int *left[half];
