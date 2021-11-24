@@ -1,10 +1,11 @@
 #include "binary_search.h"
 
 int counter = 0;
+int *global_address = NULL;
 
 int *binary_search(int value, const int *arr, size_t length)
 {
-  int *address = NULL;
+  int *address;
 
   // even and odd cases?
   size_t half = length / 2;
@@ -13,11 +14,14 @@ int *binary_search(int value, const int *arr, size_t length)
   {
     address = (int *)&arr[half];
   }
-  else if (value == arr[0] && length == 1)
+
+  if (value == arr[0] && length == 1)
   {
     address = (int *)&arr[0];
+    global_address = address;
   }
-  else if (value < arr[half])
+
+  if (value < arr[half])
   {
     const int *left[half];
     for (size_t i = 0; i < half; i++)
@@ -27,7 +31,8 @@ int *binary_search(int value, const int *arr, size_t length)
 
     binary_search(value, *left, half);
   }
-  else if (value > arr[half])
+
+  if (value > arr[half])
   {
     const int *right[half];
     for (size_t i = 0; i < half; i++)
@@ -38,8 +43,16 @@ int *binary_search(int value, const int *arr, size_t length)
     binary_search(value, *right, half);
   }
 
-  printf("Returned: %p - counter: %d\n", (void *)&arr[half], counter);
+  printf("Returned: %p - counter: %d - half value: %ld\n", (void *)&arr[half], counter, half);
+  printf("Global address: %p\n", (void *)global_address);
   counter++;
 
-  return address;
+  if (global_address != NULL)
+  {
+    return global_address;
+  }
+  else
+  {
+    return NULL;
+  }
 }
