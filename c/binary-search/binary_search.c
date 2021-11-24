@@ -5,20 +5,17 @@ int *global_address = NULL;
 
 int *binary_search(int value, const int *arr, size_t length)
 {
-  int *address;
-
   // even and odd cases?
   size_t half = length / 2;
 
   if (value == arr[half])
   {
-    address = (int *)&arr[half];
+    global_address = (int *)&arr[half];
   }
 
   if (value == arr[0] && length == 1)
   {
-    address = (int *)&arr[0];
-    global_address = address;
+    global_address = (int *)&arr[0];
   }
 
   if (value < arr[half])
@@ -43,9 +40,9 @@ int *binary_search(int value, const int *arr, size_t length)
     binary_search(value, *right, half);
   }
 
-  printf("Returned: %p - counter: %d - half value: %ld\n", (void *)&arr[half], counter, half);
-  printf("Global address: %p\n", (void *)global_address);
-  counter++;
+  // printf("Returned: %p - counter: %d - half value: %ld\n\n", (void *)&arr[half], counter, half);
+  // printf("Global address: %p\n", (void *)global_address);
+  // counter++;
 
   if (global_address != NULL)
   {

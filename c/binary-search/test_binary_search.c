@@ -11,7 +11,7 @@ void tearDown(void)
 
 static void test_finds_a_value_in_an_array_with_one_element(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int arr[] = { 6 };
    size_t length = sizeof(arr) / sizeof(arr[0]);
    TEST_ASSERT(&arr[0] == binary_search(6, arr, length));
@@ -19,7 +19,7 @@ static void test_finds_a_value_in_an_array_with_one_element(void)
 
 static void test_a_value_in_the_middle_of_an_array(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int arr[] = { 1, 3, 4, 6, 8, 9, 11 };
    size_t length = sizeof(arr) / sizeof(arr[0]);
    TEST_ASSERT(&arr[3] == binary_search(6, arr, length));
@@ -30,13 +30,12 @@ static void test_finds_a_value_at_the_beginning_of_an_array(void)
    // TEST_IGNORE();
    int arr[] = { 1, 3, 4, 6, 8, 9, 11 };
    size_t length = sizeof(arr) / sizeof(arr[0]);
-   printf("\nRequired: %p\n\n", (void *)&arr[0]);
    TEST_ASSERT(&arr[0] == binary_search(1, arr, length));
 }
 
 static void test_finds_a_value_at_the_end_of_an_array(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int arr[] = { 1, 3, 4, 6, 8, 9, 11 };
    size_t length = sizeof(arr) / sizeof(arr[0]);
    TEST_ASSERT(&arr[6] == binary_search(11, arr, length));
