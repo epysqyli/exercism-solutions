@@ -6,7 +6,7 @@ int *binary_search(int value, const int *arr, size_t length)
 {
   size_t half = length / 2;
 
-  if ((half == 0 && value != arr[half]) || length == 0)
+  if (length == 0)
   {
     address = NULL;
   }
