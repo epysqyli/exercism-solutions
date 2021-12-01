@@ -2,6 +2,7 @@
 #define LINKED_LIST_H
 
 #include <stddef.h>
+#include <stdlib.h>
 
 typedef int ll_data_t;
 struct list;
