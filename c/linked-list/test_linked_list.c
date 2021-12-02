@@ -20,7 +20,7 @@ void tearDown(void)
 
 static void test_pop_gets_element_from_the_list(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 7);
    TEST_ASSERT_EQUAL(7, list_pop(list));
 }
