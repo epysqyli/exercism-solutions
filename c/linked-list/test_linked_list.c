@@ -76,13 +76,13 @@ static void test_pop_push_shift_and_unshift_can_be_used_in_any_order(void)
 
 static void test_count_an_empty_list(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    TEST_ASSERT_EQUAL(0, list_count(list));
 }
 
 static void test_count_a_list_with_items(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 37);
    list_push(list, 1);
    TEST_ASSERT_EQUAL(2, list_count(list));
@@ -90,7 +90,7 @@ static void test_count_a_list_with_items(void)
 
 static void test_count_is_correct_after_mutation(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 31);
    TEST_ASSERT_EQUAL(1, list_count(list));
    list_unshift(list, 43);
