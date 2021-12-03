@@ -62,6 +62,33 @@ ll_data_t list_pop(struct list *list)
    return data;
 }
 
+ll_data_t list_shift(struct list *list)
+{
+	// select second node
+	ll_data_t data = list->first->next->data;
+
+	// reorder pointers
+	list->first->next = list->first->next->next;
+	list->first->next->prev = list->first;
+
+	return data;
+}
+
+void list_unshift(struct list *list, ll_data_t value)
+{
+	// find second node in list
+	struct list_node *second = list->first->next;
+
+	// initialize new node
+	struct list_node *new_node = malloc(sizeof(struct list_node));
+	new_node->data = value;
+	new_node->prev = list->first;
+	new_node->next = second;
+
+	// reorder pointers
+	list->first->next = new_node;
+	second->prev = new_node;
+}
 void list_destroy(struct list *list)
 {
    free(list);

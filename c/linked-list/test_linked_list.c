@@ -27,7 +27,7 @@ static void test_pop_gets_element_from_the_list(void)
 
 static void test_push_pop_respectively_add_remove_at_the_end_of_the_list(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 11);
    list_push(list, 13);
    TEST_ASSERT_EQUAL(13, list_pop(list));
@@ -36,14 +36,14 @@ static void test_push_pop_respectively_add_remove_at_the_end_of_the_list(void)
 
 static void test_shift_gets_an_element_from_the_list(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 17);
    TEST_ASSERT_EQUAL(17, list_shift(list));
 }
 
 static void test_shift_gets_first_element_from_the_list(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 23);
    list_push(list, 5);
    TEST_ASSERT_EQUAL(23, list_shift(list));
@@ -52,7 +52,7 @@ static void test_shift_gets_first_element_from_the_list(void)
 
 static void test_unshift_adds_element_at_start_of_the_list(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_unshift(list, 23);
    list_unshift(list, 5);
    TEST_ASSERT_EQUAL(5, list_shift(list));
@@ -61,7 +61,7 @@ static void test_unshift_adds_element_at_start_of_the_list(void)
 
 static void test_pop_push_shift_and_unshift_can_be_used_in_any_order(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 1);
    list_push(list, 2);
    TEST_ASSERT_EQUAL(2, list_pop(list));
