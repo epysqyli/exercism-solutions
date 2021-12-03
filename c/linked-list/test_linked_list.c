@@ -174,7 +174,7 @@ test_deletes_the_element_with_the_specified_value_from_the_list_reassigns_head(v
 
 static void test_deletes_the_first_of_two_elements(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 97);
    list_push(list, 101);
    list_delete(list, 97);
@@ -184,7 +184,7 @@ static void test_deletes_the_first_of_two_elements(void)
 
 static void test_deletes_the_second_of_two_elements(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 97);
    list_push(list, 101);
    list_delete(list, 101);
@@ -195,7 +195,7 @@ static void test_deletes_the_second_of_two_elements(void)
 static void
 test_delete_does_not_modify_the_list_if_the_element_is_not_found(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 89);
    list_delete(list, 103);
    TEST_ASSERT_EQUAL(1, list_count(list));
@@ -203,7 +203,7 @@ test_delete_does_not_modify_the_list_if_the_element_is_not_found(void)
 
 static void test_deletes_only_the_first_occurrence(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 73);
    list_push(list, 9);
    list_push(list, 9);

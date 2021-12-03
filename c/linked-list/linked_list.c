@@ -109,7 +109,7 @@ void list_delete(struct list *list, ll_data_t value)
    struct list_node *current = list->first->next;
    struct list_node *to_be_deleted = NULL;
 
-   while (!to_be_deleted)
+   while (!to_be_deleted && current != list->last)
    {
       if (current->data == value)
       {
@@ -120,8 +120,6 @@ void list_delete(struct list *list, ll_data_t value)
 
          prev->next = next;
          next->prev = prev;
-
-         break;
       }
       current = current->next;
    }
