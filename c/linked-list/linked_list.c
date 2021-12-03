@@ -2,15 +2,13 @@
 
 struct list_node
 {
-   struct list_node *prev;
+   struct list_node *prev, *next;
    ll_data_t data;
-   struct list_node *next;
 };
 
 struct list
 {
-   struct list_node *first;
-   struct list_node *last;
+   struct list_node *first, *last;
 };
 
 struct list *list_create(void)
