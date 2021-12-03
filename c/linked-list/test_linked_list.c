@@ -103,7 +103,7 @@ static void test_count_is_correct_after_mutation(void)
 
 static void test_popping_to_empty_does_not_break_the_list(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 41);
    list_push(list, 59);
    list_pop(list);
@@ -115,7 +115,7 @@ static void test_popping_to_empty_does_not_break_the_list(void)
 
 static void test_shifting_to_empty_does_not_break_the_list(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 41);
    list_push(list, 59);
    list_shift(list);
@@ -127,7 +127,7 @@ static void test_shifting_to_empty_does_not_break_the_list(void)
 
 static void test_deletes_the_only_element(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 61);
    list_delete(list, 61);
    TEST_ASSERT_EQUAL(0, list_count(list));
@@ -136,7 +136,7 @@ static void test_deletes_the_only_element(void)
 static void
 test_deletes_the_element_with_the_specified_value_from_the_list(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 71);
    list_push(list, 83);
    list_push(list, 79);
@@ -149,7 +149,7 @@ test_deletes_the_element_with_the_specified_value_from_the_list(void)
 static void
 test_deletes_the_element_with_the_specified_value_from_the_list_reassigns_tail(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 71);
    list_push(list, 83);
    list_push(list, 79);
@@ -162,7 +162,7 @@ test_deletes_the_element_with_the_specified_value_from_the_list_reassigns_tail(v
 static void
 test_deletes_the_element_with_the_specified_value_from_the_list_reassigns_head(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    list_push(list, 71);
    list_push(list, 83);
    list_push(list, 79);

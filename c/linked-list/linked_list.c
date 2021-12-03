@@ -92,16 +92,39 @@ void list_unshift(struct list *list, ll_data_t value)
 
 size_t list_count(const struct list *list)
 {
-	size_t count = 0;
-	struct list_node *current = list->first;
+   size_t count = 0;
+   struct list_node *current = list->first;
 
-	while (current->next != list->last)
-	{
-		count++;
-		current = current->next;
-	}
+   while (current->next != list->last)
+   {
+      count++;
+      current = current->next;
+   }
 
-	return count;
+   return count;
+}
+
+void list_delete(struct list *list, ll_data_t value)
+{
+   struct list_node *current = list->first->next;
+   struct list_node *to_be_deleted = NULL;
+
+   while (!to_be_deleted)
+   {
+      if (current->data == value)
+      {
+         to_be_deleted = current;
+
+         struct list_node *prev = to_be_deleted->prev;
+         struct list_node *next = to_be_deleted->next;
+
+         prev->next = next;
+         next->prev = prev;
+
+         break;
+      }
+      current = current->next;
+   }
 }
 
 void list_destroy(struct list *list)
