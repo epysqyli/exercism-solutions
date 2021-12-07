@@ -32,8 +32,7 @@ struct list *list_create(void)
 void list_push(struct list *list, ll_data_t value)
 {
    // find last non empty node in order
-   struct list_node *second_last;
-   second_last = (list->first->next == list->last) ? list->first : list->last->prev;
+   struct list_node *second_last = list->last->prev;
 
    // initialize new_node
    struct list_node *new_node = malloc(sizeof(struct list_node));
