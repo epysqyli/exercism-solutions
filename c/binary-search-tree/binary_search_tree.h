@@ -13,7 +13,7 @@ struct node
 
 node_t *build_tree(int *tree_data, size_t tree_data_len);
 
-node_t *find_node(node_t *tree, int item);
+void find_and_insert_node(node_t *tree, int item);
 
 void insert_item(node_t *node, int item);
 
