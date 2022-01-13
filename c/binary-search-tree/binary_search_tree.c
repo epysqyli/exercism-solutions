@@ -8,8 +8,7 @@ void insert_node(node_t *node, int item)
   {
     if (node->left == NULL)
     {
-      node_t *left = malloc(sizeof(node_t));
-      node->left = left;
+      node->left = malloc(sizeof(node_t));
       node->left->data = item;
       return;
     }
@@ -21,8 +20,7 @@ void insert_node(node_t *node, int item)
   {
     if (node->right == NULL)
     {
-      node_t *right = malloc(sizeof(node_t));
-      node->right = right;
+      node->right = malloc(sizeof(node_t));
       node->right->data = item;
       return;
     }
