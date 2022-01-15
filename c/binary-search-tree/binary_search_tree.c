@@ -77,8 +77,8 @@ int sort_data(node_t *tree, int *sorted_array, int counter)
   if (head->left != NULL)
     counter = sort_data(head->left, sorted_array, counter);
 
+  sorted_array[counter] = head->data;
   counter++;
-  sorted_array[counter - 1] = head->data;
 
   if (head->right != NULL)
     counter = sort_data(head->right, sorted_array, counter);
