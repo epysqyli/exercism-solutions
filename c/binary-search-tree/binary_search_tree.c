@@ -50,11 +50,6 @@ void free_tree(node_t *tree)
   free(tree);
 }
 
-void print_data(node_t *node)
-{
-  printf("Node data: %d\n", node->data);
-}
-
 int sort_data(node_t *tree, int *sorted_array, int counter)
 {
   node_t *head = tree;

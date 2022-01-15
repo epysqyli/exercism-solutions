@@ -21,6 +21,4 @@ int sort_data(node_t *tree, int *sorted_array, int counter);
 
 int *sorted_data(node_t *tree);
 
-void print_data(node_t *node);
-
 #endif
