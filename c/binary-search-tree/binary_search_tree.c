@@ -55,21 +55,6 @@ void print_data(node_t *node)
   printf("Node data: %d\n", node->data);
 }
 
-int count_tree_len(node_t *tree, int len)
-{
-  node_t *head = tree;
-
-  if (head->left != NULL)
-    len = count_tree_len(head->left, len);
-
-  len++;
-
-  if (head->right != NULL)
-    len = count_tree_len(head->right, len);
-
-  return len;
-}
-
 int sort_data(node_t *tree, int *sorted_array, int counter)
 {
   node_t *head = tree;
@@ -77,8 +62,9 @@ int sort_data(node_t *tree, int *sorted_array, int counter)
   if (head->left != NULL)
     counter = sort_data(head->left, sorted_array, counter);
 
-  sorted_array[counter] = head->data;
   counter++;
+  sorted_array = realloc(sorted_array, counter * sizeof(int));
+  sorted_array[counter - 1] = head->data;
 
   if (head->right != NULL)
     counter = sort_data(head->right, sorted_array, counter);
@@ -88,11 +74,8 @@ int sort_data(node_t *tree, int *sorted_array, int counter)
 
 int *sorted_data(node_t *tree)
 {
-  int len = 0;
-  len = count_tree_len(tree, len);
   int counter = 0;
-
-  int *sorted_array = malloc(len * sizeof(int));
+  int *sorted_array = malloc(sizeof(int));
   sort_data(tree, sorted_array, counter);
   return sorted_array;
 }
