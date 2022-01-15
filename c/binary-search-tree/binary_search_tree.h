@@ -19,7 +19,7 @@ void free_tree(node_t *tree);
 
 int count_tree_len(node_t *tree, int len);
 
-int *sort_data(node_t *tree, int *sorted_array, int len);
+int sort_data(node_t *tree, int *sorted_array, int counter);
 
 int *sorted_data(node_t *tree);
 
